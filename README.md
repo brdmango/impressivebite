@@ -17,6 +17,8 @@ the files in this repo are the site that gets deployed.
 | `contact.html` | Sample-request / quote form, contact routes, ordering FAQ |
 | `assets/css/site.css` | The whole design system in one stylesheet |
 | `assets/js/site.js` | Nav, scroll reveal, FAQ, form validation and submission |
+| `404.html` | Not-found page (root-absolute asset paths, `noindex`) |
+| `netlify.toml` | Publish settings, security headers, cache policy |
 | `robots.txt`, `sitemap.xml` | Search engine basics |
 
 ## Running it locally
@@ -33,40 +35,67 @@ better through a server.
 
 ## Deploying
 
-The repository root **is** the site root. Point any static host at it:
+The repository root **is** the site root — there is no build step.
 
-- **Netlify / Vercel / Cloudflare Pages** — connect the repo, no build command,
-  publish directory `/`
-- **GitHub Pages** — Settings → Pages → deploy from branch, root folder
-- **S3 + CloudFront** — sync the repo contents to the bucket
+**Netlify (what this repo is configured for).** `netlify.toml` sets `publish = "."`,
+an empty build command, security headers and cache policy. Connect the repo in the
+Netlify UI; no other setup is needed. `404.html` is picked up automatically.
 
-Then point `impressivebite.com` at the host and enable HTTPS.
+DNS, once the site is connected — in Netlify, Domain settings → Add custom domain
+→ `impressivebite.com`, then at your registrar:
 
-## Wiring up the contact form
+| Type | Name | Value |
+| --- | --- | --- |
+| A | `@` | `75.2.60.5` (Netlify's load balancer) |
+| CNAME | `www` | `<your-site>.netlify.app` |
 
-The form works out of the box: with no backend configured it opens the visitor's mail
-client with the request pre-filled. That's a usable fallback, but a real endpoint is
-better — mail-client handoff loses visitors who use webmail.
+Or point the nameservers at Netlify DNS and it handles both. Netlify provisions the
+Let's Encrypt certificate once DNS resolves — usually minutes, up to 24h. Set the
+primary domain in Netlify so the other host redirects to it rather than serving
+duplicate content.
 
-To connect one, edit the config block at the top of `assets/js/site.js`:
+Other hosts work too (Vercel, Cloudflare Pages, GitHub Pages, S3+CloudFront) — point
+them at the repo root — but they ignore `netlify.toml`, so the headers and the form
+backend would need reconfiguring.
 
-```js
-var FORM_ENDPOINT = "https://formspree.io/f/YOUR_ID";  // or your own handler
-var CONTACT_EMAIL = "orders@impressivebite.com";
-```
+## The contact form
 
-The form POSTs `FormData` with `Accept: application/json` and expects a 2xx response.
-That shape works directly with Formspree, Basin, Getform and Formsubmit; any custom
-handler that accepts multipart form data works too.
+The form is wired to **Netlify Forms** and needs no third-party service. `contact.html`
+carries `data-netlify="true"`, `name="request"` and a hidden `form-name` input, which
+Netlify's deploy bot parses out of the static HTML to register the form. Submissions
+land under **Forms** in the Netlify dashboard; add notification emails there so they
+reach a person. The free tier covers 100 submissions/month.
+
+`site.js` submits over AJAX so the inline validation and status message survive — it
+posts a URL-encoded body back to the same path, which is the shape Netlify expects.
+Submission mode is chosen automatically, in this order:
+
+1. Form has `data-netlify` → Netlify Forms (current setup)
+2. `FORM_ENDPOINT` is set in `assets/js/site.js` → posts `FormData` there
+   (Formspree, Basin, Getform, or your own API)
+3. Neither → opens the visitor's mail client with the request pre-filled, so the form
+   is never a dead end, including on local `file://` previews
 
 Field names sent: `name`, `role`, `practice`, `email`, `phone`, `state`, `locations`,
-`reason`, `products` (repeated), `technique`, `message`. The `company_website` field is
-a honeypot — it is hidden from people, so any submission that fills it is dropped
-client-side. Reject it server-side too.
+`reason`, `products` (repeated, one per checked box), `technique`, `message`. The
+`company_website` field is a honeypot — hidden from people, dropped client-side by
+`site.js` and server-side by Netlify via `netlify-honeypot`.
 
-**On Netlify** you can skip the JS endpoint entirely by adding `netlify` and
-`name="request"` attributes to the `<form>` tag, but then remove or bypass the
-`e.preventDefault()` submit handler so the browser posts natively.
+### Content Security Policy
+
+`netlify.toml` ships a strict CSP that allows no external origins. It pins a
+**sha256 hash of the one inline `<head>` snippet** (`classList.add("js")`). If you edit
+that snippet by even a character, recompute the hash or the browser will block it —
+which stops the scroll-reveal from ever un-hiding content:
+
+```bash
+printf '%s' 'document.documentElement.classList.add("js");' \
+  | openssl dgst -sha256 -binary | openssl base64
+```
+
+`style-src` needs `'unsafe-inline'` because the pages use `style=""` attributes, which
+cannot be hashed. Adding any external script, font or analytics tag means widening the
+CSP to match.
 
 Product links can deep-link into the form: `contact.html?product=light-body`
 pre-checks that material's box. The values match the checkbox `value` attributes.

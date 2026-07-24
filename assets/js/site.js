@@ -7,10 +7,17 @@
   "use strict";
 
   /* --- Config ------------------------------------------------------------
-     Set FORM_ENDPOINT to your form handler (Formspree, Netlify Forms with an
-     AJAX endpoint, your own API, etc.). While it is null the form falls back
-     to opening the visitor's mail client with the request pre-filled, so the
-     site is still usable on day one. See README.md.
+     Submission is chosen in this order:
+
+       1. The form carries data-netlify="true" → post back to this same page,
+          URL-encoded, which is what Netlify Forms expects for AJAX. Nothing to
+          configure; it works as soon as the site is deployed to Netlify.
+       2. FORM_ENDPOINT is set → post FormData there (Formspree, Basin, your
+          own API).
+       3. Neither → open the visitor's mail client with the request pre-filled,
+          so the form is never a dead end, including on local file:// previews.
+
+     See README.md.
      -------------------------------------------------------------------- */
   var FORM_ENDPOINT = null;
   var CONTACT_EMAIL = "orders@impressivebite.com";
@@ -180,7 +187,9 @@
     // Honeypot: bots fill hidden fields, humans never see them.
     if (String(data.get("company_website") || "").trim()) return;
 
-    if (!FORM_ENDPOINT) {
+    var useNetlify = form.hasAttribute("data-netlify");
+
+    if (!useNetlify && !FORM_ENDPOINT) {
       mailtoFallback(data);
       return;
     }
@@ -189,11 +198,22 @@
     var originalLabel = submitBtn.textContent;
     submitBtn.textContent = "Sending…";
 
-    fetch(FORM_ENDPOINT, {
-      method: "POST",
-      body: data,
-      headers: { Accept: "application/json" }
-    })
+    // Netlify wants a URL-encoded body posted to a path on the same site.
+    // URLSearchParams preserves repeated keys, so multi-checkbox `products`
+    // arrives as several values rather than one collapsed field.
+    var request = useNetlify
+      ? [window.location.pathname, {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(data).toString()
+        }]
+      : [FORM_ENDPOINT, {
+          method: "POST",
+          body: data,
+          headers: { Accept: "application/json" }
+        }];
+
+    fetch(request[0], request[1])
       .then(function (res) {
         if (!res.ok) throw new Error("Request failed with status " + res.status);
         form.reset();

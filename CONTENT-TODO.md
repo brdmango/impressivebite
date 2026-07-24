@@ -23,8 +23,10 @@ marketing one. Do not ship those without confirming them.
 | `contact.html` | "Monday–Friday, 8:00 AM – 6:00 PM ET" | Real support hours |
 | Footer, all pages | No business address | Add your legal entity name and address if you want one shown |
 
-Also: `assets/js/site.js` has `FORM_ENDPOINT = null`, so the form falls back to opening
-the visitor's mail client. Wire up a real endpoint (see README) before launch.
+The form itself is wired and working — it submits to Netlify Forms. What still needs
+doing: **add a notification email in the Netlify dashboard** (Forms → Settings → Form
+notifications), or submissions will pile up unread in the dashboard with nobody
+told about them.
 
 ## 2. ⚠️ Product specifications
 

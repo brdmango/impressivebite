@@ -73,7 +73,15 @@
           Fields marked <span class="req">*</span> are required. We reply within one business day.
         </p>
 
-        <form id="request-form" novalidate>
+        <!-- Netlify Forms: the deploy bot parses these attributes out of the
+             static HTML to register the form. `netlify-honeypot` makes Netlify
+             discard submissions that fill company_website server-side; site.js
+             drops them client-side too. Submissions appear under Forms in the
+             Netlify dashboard. -->
+        <form id="request-form" name="request" method="POST"
+              data-netlify="true" netlify-honeypot="company_website" novalidate>
+          <input type="hidden" name="form-name" value="request">
+
           <!-- Honeypot: hidden from people, irresistible to bots -->
           <div class="hp-field" aria-hidden="true">
             <label for="company_website">Company website</label>
