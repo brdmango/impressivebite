@@ -7,6 +7,18 @@
   publish = "."
   command = ""
 
+# --- Redirects --------------------------------------------------------------
+# technical.html was the impression-material spec sheet. The lab site replaced
+# it with how-it-works.html, so anything still pointing at the old URL — a
+# bookmark, an indexed result — lands on the page that replaced it rather than
+# on a 404.
+
+[[redirects]]
+  from = "/technical.html"
+  to = "/how-it-works.html"
+  status = 301
+  force = true
+
 # --- Security headers -------------------------------------------------------
 # The CSP is deliberately strict: the site loads nothing from third parties, so
 # there is no reason to allow any external origin.
