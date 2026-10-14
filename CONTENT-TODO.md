@@ -55,28 +55,46 @@ Short list now, but they're still commitments:
 - Turnaround times are **no longer stated anywhere.** If you advertise them later, make
   sure they hold on your worst week, not your best.
 
-## 5. Capability
+## 5. ⚠️ Nothing charges for digitising an impression
+
+The site now says, in several places, that you accept physical impressions and scan them
+in-house. **There is no line item for that work anywhere in the price list**, and the
+price-list page says "same prices whether you send an intraoral scan or a physical
+impression" — so as written, you absorb the model work and the scanning time for free.
+
+That may well be the right call as a way in for practices that haven't gone digital. But
+decide it deliberately:
+
+- keep it free and treat it as customer acquisition, or
+- add a line item (e.g. "Impression scanning / model digitisation") to
+  `tools/price-list.json` and remove the "same prices" sentence from `products.html`
+
+Either way, note that the source price list already carries **3D Printed Working Model**
+at $3.20 and **3D Printed Study Model** at $6.40 — if an impression case needs a printed
+model, that cost is real and currently unbilled.
+
+## 6. Capability
 
 The price list says you make all 115 items. Anything you can't actually produce at
 launch should come out of `tools/price-list.json` — it's one line each. The most
 demanding entries are the All-on-X hybrids, the milled titanium bar, and the full-arch
 surgical guides.
 
-## 6. How cases actually reach you
+## 7. How cases actually reach you
 
 The site says "upload an intraoral scan in STL, PLY or DCM — or post us a PVS
 impression". There is **no upload portal**. Until there is one, either build/adopt one,
 or change that line to say how cases really reach you — email, a shared drive, a lab
 platform.
 
-## 7. HIPAA
+## 8. HIPAA
 
 If you handle patient scans, you are likely a business associate of every practice you
 serve: Business Associate Agreements and real safeguards. The contact form asks people
 not to send patient-identifying information, which covers the form itself but not the
 case workflow. Get advice before the first real case.
 
-## 8. Still deliberately omitted
+## 9. Still deliberately omitted
 
 - **Testimonials and case photos** — fabricated reviews of a medical service are an FTC
   violation. Add real ones with permission.
