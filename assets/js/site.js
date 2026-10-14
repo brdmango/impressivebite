@@ -20,7 +20,7 @@
      See README.md.
      -------------------------------------------------------------------- */
   var FORM_ENDPOINT = null;
-  var CONTACT_EMAIL = "orders@impressivebite.com";
+  var CONTACT_EMAIL = "hello@impressivebite.com";
 
   /* --- Mobile navigation ------------------------------------------------ */
 
@@ -89,12 +89,14 @@
     el.textContent = String(new Date().getFullYear());
   });
 
-  /* --- Prefill product interest from ?product= --------------------------- */
+  /* --- Prefill service interest from ?service= ---------------------------
+     The "Request pricing" buttons on each catalog section link here, so the
+     form arrives with that case type already checked. */
 
   var params = new URLSearchParams(window.location.search);
-  var wanted = params.get("product");
+  var wanted = params.get("service");
   if (wanted) {
-    var box = document.querySelector('input[name="products"][value="' + CSS.escape(wanted) + '"]');
+    var box = document.querySelector('input[name="services"][value="' + CSS.escape(wanted) + '"]');
     if (box) box.checked = true;
   }
 
@@ -157,7 +159,7 @@
 
     var href =
       "mailto:" + CONTACT_EMAIL +
-      "?subject=" + encodeURIComponent("Sample / quote request — " + (data.get("practice") || "New practice")) +
+      "?subject=" + encodeURIComponent("Lab inquiry — " + (data.get("practice") || "New practice")) +
       "&body=" + encodeURIComponent(lines.join("\n"));
 
     window.location.href = href;
@@ -218,7 +220,7 @@
         if (!res.ok) throw new Error("Request failed with status " + res.status);
         form.reset();
         setStatus(
-          "Thank you — your request is in. A rep will follow up within one business day.",
+          "Thanks — that's with us. Someone from the lab will come back to you within one business day.",
           "ok"
         );
       })

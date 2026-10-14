@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Request Samples &amp; Pricing | ImpressiveBite</title>
-<meta name="description" content="Free VPS sample kits for verified U.S. dental practices. Request pricing, net-30 terms, DSO quotes or technical support from ImpressiveBite.">
+<title>Send Your First Case | ImpressiveBite Dental Lab</title>
+<meta name="description" content="Get pricing, ask about your scanner, or send your first case to ImpressiveBite. No minimum, no contract, and a reply within one business day.">
 <link rel="canonical" href="https://impressivebite.com/contact.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Request Samples &amp; Pricing | ImpressiveBite">
-<meta property="og:description" content="Free VPS sample kits for verified U.S. dental practices — no card, no sales call.">
+<meta property="og:title" content="Send Your First Case | ImpressiveBite Dental Lab">
+<meta property="og:description" content="Pricing, scanner questions, DSO accounts, or your first case. No minimum, no contract.">
 <meta name="theme-color" content="#06443e">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js");</script>
@@ -36,27 +36,27 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="products.html">Products</a>
-      <a href="technical.html">Technical</a>
+      <a href="products.html">Restorations</a>
+      <a href="how-it-works.html">How it works</a>
       <a href="about.html">About</a>
       <a href="contact.html" aria-current="page">Contact</a>
-      <a class="btn btn--primary" href="#request-form">Request free samples</a>
+      <a class="btn btn--primary" href="#request-form">Send your first case</a>
     </nav>
 
-    <a class="btn btn--primary header-cta" href="#request-form">Request free samples</a>
+    <a class="btn btn--primary header-cta" href="#request-form">Send your first case</a>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero" style="padding-bottom:clamp(36px,4vw,52px)" id="samples">
+  <section class="hero" style="padding-bottom:clamp(36px,4vw,52px)" id="start">
     <div class="wrap">
       <div style="max-width:740px">
-        <span class="eyebrow">Samples, pricing &amp; support</span>
-        <h1>Tell us what you run. We'll send what fits.</h1>
+        <span class="eyebrow">Get started</span>
+        <h1>Tell us what you send out. We'll do the rest.</h1>
         <p class="hero__lede">
-          Free sample kits ship to verified U.S. dental practices — matched tray and wash material
-          with mixing tips, enough for real cases. No card, no contract, no rep showing up
+          Pricing for your actual case mix, a straight answer about your scanner, or a first case
+          sent this week. No minimum, no contract, and nobody will show up at your office
           unannounced.
         </p>
       </div>
@@ -68,7 +68,7 @@
 
       <!-- ================= Form ================= -->
       <div class="form-card">
-        <h2 style="font-size:1.5rem">Request samples or pricing</h2>
+        <h2 style="font-size:1.5rem">Start with your practice</h2>
         <p style="color:var(--slate-500);font-size:.96rem">
           Fields marked <span class="req">*</span> are required. We reply within one business day.
         </p>
@@ -78,9 +78,9 @@
              discard submissions that fill company_website server-side; site.js
              drops them client-side too. Submissions appear under Forms in the
              Netlify dashboard. -->
-        <form id="request-form" name="request" method="POST"
+        <form id="request-form" name="lab-inquiry" method="POST"
               data-netlify="true" netlify-honeypot="company_website" novalidate>
-          <input type="hidden" name="form-name" value="request">
+          <input type="hidden" name="form-name" value="lab-inquiry">
 
           <!-- Honeypot: hidden from people, irresistible to bots -->
           <div class="hp-field" aria-hidden="true">
@@ -101,9 +101,9 @@
                 <option>Dentist / owner</option>
                 <option>Associate dentist</option>
                 <option>Office manager</option>
+                <option>Lab coordinator</option>
                 <option>Dental assistant</option>
                 <option>Purchasing / procurement</option>
-                <option>Lab technician</option>
                 <option>Other</option>
               </select>
             </div>
@@ -160,7 +160,6 @@
                 <option>2–5</option>
                 <option>6–20</option>
                 <option>21+ (DSO)</option>
-                <option>Dental laboratory</option>
                 <option>School / residency program</option>
               </select>
             </div>
@@ -170,56 +169,74 @@
             <label for="reason">What can we help with? <span class="req">*</span></label>
             <select id="reason" name="reason" required>
               <option value="">Select one</option>
-              <option>Free sample kit</option>
-              <option>Pricing / quote</option>
-              <option>DSO or group pricing</option>
-              <option>Net-30 terms application</option>
-              <option>Technical or clinical question</option>
-              <option>Problem with an order or a lot</option>
+              <option>Pricing for our case mix</option>
+              <option>Send our first case</option>
+              <option>Question about our scanner</option>
+              <option>We still use impressions — how do we start?</option>
+              <option>DSO or group account</option>
+              <option>Question about a specific case</option>
+              <option>Problem with a case in progress</option>
               <option>Something else</option>
             </select>
             <span class="error-msg" id="reason-error"></span>
           </div>
 
           <div class="field">
-            <label>Materials you're interested in <span class="hint">Check any that apply — or leave blank and we'll match your technique.</span></label>
+            <label>What do you send out? <span class="hint">Check any that apply — this is what we'll price.</span></label>
             <div class="choices">
-              <label class="choice"><input type="checkbox" name="products" value="putty"> Putty</label>
-              <label class="choice"><input type="checkbox" name="products" value="heavy-body"> Heavy Body</label>
-              <label class="choice"><input type="checkbox" name="products" value="monophase"> Monophase</label>
-              <label class="choice"><input type="checkbox" name="products" value="light-body"> Light Body</label>
-              <label class="choice"><input type="checkbox" name="products" value="extra-light-wash"> Extra-Light Wash</label>
-              <label class="choice"><input type="checkbox" name="products" value="bite-registration"> Bite Registration</label>
+              <label class="choice"><input type="checkbox" name="services" value="crown-bridge"> Crown &amp; bridge</label>
+              <label class="choice"><input type="checkbox" name="services" value="implant"> Implant restorations</label>
+              <label class="choice"><input type="checkbox" name="services" value="removable"> Dentures &amp; partials</label>
+              <label class="choice"><input type="checkbox" name="services" value="appliance"> Night guards &amp; splints</label>
+              <label class="choice"><input type="checkbox" name="services" value="retainers"> Clear retainers</label>
+              <label class="choice"><input type="checkbox" name="services" value="esthetics"> Veneers &amp; esthetics</label>
+            </div>
+          </div>
+
+          <div class="field-row">
+            <div class="field">
+              <label for="scanner">Intraoral scanner</label>
+              <select id="scanner" name="scanner">
+                <option value="">Select one</option>
+                <option>3Shape TRIOS</option>
+                <option>iTero</option>
+                <option>Medit</option>
+                <option>Dentsply Sirona Primescan / Omnicam</option>
+                <option>Carestream</option>
+                <option>Planmeca</option>
+                <option>Shining 3D / Aoralscan</option>
+                <option>Other scanner</option>
+                <option>No scanner — we take impressions</option>
+                <option>Shopping for one now</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="volume">Units per month</label>
+              <select id="volume" name="volume">
+                <option value="">Select one</option>
+                <option>Under 20</option>
+                <option>20–50</option>
+                <option>50–150</option>
+                <option>150–400</option>
+                <option>400+</option>
+              </select>
             </div>
           </div>
 
           <div class="field">
-            <label for="technique">Which technique do you use most?</label>
-            <select id="technique" name="technique">
-              <option value="">Select one</option>
-              <option>One-step dual-arch (triple tray)</option>
-              <option>One-step full-arch</option>
-              <option>Two-step putty-wash</option>
-              <option>Single-material / monophase</option>
-              <option>Implant impressions</option>
-              <option>Mix of several</option>
-            </select>
-          </div>
-
-          <div class="field">
             <label for="message">Anything else we should know?</label>
-            <textarea id="message" name="message" placeholder="Case types, monthly volume, what you use now, or a technical question."></textarea>
+            <textarea id="message" name="message" placeholder="A case you'd like to send first, what's gone wrong with your current lab, or a question about a specific restoration."></textarea>
           </div>
 
-          <button class="btn btn--primary btn--lg btn--wide" type="submit">Send request</button>
+          <button class="btn btn--primary btn--lg btn--wide" type="submit">Send</button>
 
           <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
 
           <p class="form-legal">
-            We use your details to answer this request and ship samples. We don't sell your
-            information, and we don't add you to a mailing list unless you ask. Samples are
-            limited to one kit per practice and are available to licensed U.S. dental
-            professionals only.
+            We use your details to answer this request and set up your account. We don't sell your
+            information and we don't add you to a mailing list unless you ask. Please don't include
+            patient-identifying information in this form — once you have an account, cases go
+            through the secure portal.
           </p>
         </form>
       </div>
@@ -227,16 +244,15 @@
       <!-- ================= Side panel ================= -->
       <aside>
         <div class="info-block">
-          <h3>Orders &amp; samples</h3>
-          <p><a href="mailto:orders@impressivebite.com">orders@impressivebite.com</a></p>
-          <p><a href="tel:+18005550142">(800) 555-0142</a></p>
-          <p><small>Monday–Friday, 8:00 AM – 6:00 PM ET</small></p>
+          <h3>New accounts &amp; pricing</h3>
+          <p><a href="mailto:hello@impressivebite.com">hello@impressivebite.com</a></p>
+          <p><small>Pricing, scanner questions, and getting set up.</small></p>
         </div>
 
         <div class="info-block">
-          <h3>Technical support</h3>
-          <p><a href="mailto:support@impressivebite.com">support@impressivebite.com</a></p>
-          <p><small>Failed impression, lot question, or a clinical question about technique.</small></p>
+          <h3>Cases in progress</h3>
+          <p><a href="mailto:cases@impressivebite.com">cases@impressivebite.com</a></p>
+          <p><small>A case you've already sent, a remake, or a question for your technician. Include the case number.</small></p>
         </div>
 
         <div class="info-block" id="dso">
@@ -249,17 +265,18 @@
           <h3 style="font-size:1rem">What happens next</h3>
           <ul class="checks" style="margin-bottom:0;font-size:.92rem">
             <li>We reply within one business day</li>
-            <li>Sample kits ship free, usually same week</li>
-            <li>We verify your license before shipping professional-use material</li>
-            <li>No follow-up sales calls unless you ask for one</li>
+            <li>You get pricing for the work you actually send out</li>
+            <li>We confirm your scanner exports what we need</li>
+            <li>Your account and portal login are set up the same day you say go</li>
+            <li>No sales calls unless you ask for one</li>
           </ul>
         </div>
 
         <div class="callout callout--info" style="margin-top:22px">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>
           <p style="margin-bottom:0;font-size:.9rem">
-            <strong>Ordering by 2:00 PM ET?</strong> It ships the same day from our U.S.
-            distribution center.
+            <strong>Already have a case ready?</strong> Say so in the message. We can set up the
+            account and take the first case the same day.
           </p>
         </div>
       </aside>
@@ -272,38 +289,44 @@
     <div class="wrap wrap--narrow">
       <div class="section-head section-head--center">
         <span class="eyebrow">Before you ask</span>
-        <h2>Common questions about samples and ordering</h2>
+        <h2>Common questions about getting started</h2>
       </div>
 
       <div class="faq">
         <details open>
-          <summary>Is the sample kit really free?</summary>
+          <summary>How quickly can we send a case?</summary>
           <div class="faq__body">
-            <p>Yes — free material and free shipping, one kit per practice. We ask for your license number because impression material is a professional-use product, not because we're building a call list.</p>
+            <p>Same day, usually. Setting up an account takes a short conversation to confirm your scanner, your preferences and billing — after that the portal is live and you can upload immediately.</p>
           </div>
         </details>
         <details>
-          <summary>How much material is in a kit?</summary>
+          <summary>Do we have to leave our current lab?</summary>
           <div class="faq__body">
-            <p>Enough for several real cases, not a token cartridge. Typically a matched tray and wash pairing with mixing tips. Tell us your technique on the form and we'll match the combination.</p>
+            <p>No, and most practices don't at first. Run both. Send us a few units, keep the rest where they are, and compare on your own cases. There's no minimum, so there's no cost to taking your time.</p>
           </div>
         </details>
         <details>
-          <summary>Do you offer net-30 terms?</summary>
+          <summary>What if we don't have a scanner?</summary>
           <div class="faq__body">
-            <p>Yes, for established practices. Select "Net-30 terms application" on the form and we'll send a short credit application. Approval usually takes two business days.</p>
+            <p>Send impressions. We'll mail prepaid labels, digitize them when they arrive, and run the case through the same workflow. It adds about a day. If you're considering a scanner, tell us which ones — we'll give you an honest read on how each one's files behave in a lab.</p>
           </div>
         </details>
         <details>
-          <summary>Can I keep buying through my current distributor?</summary>
+          <summary>How does billing work?</summary>
           <div class="faq__body">
-            <p>In many cases, yes. Tell us who you're on account with and we'll see whether we can route your order through them. Buying direct is usually simpler and cheaper, but we'd rather fit your workflow than fight it.</p>
+            <p>Monthly invoicing on net terms for established practices, or card at the case level if you'd rather. Either way the quote is the invoice — no line items appear that weren't agreed in advance.</p>
           </div>
         </details>
         <details>
-          <summary>Do you ship outside the United States?</summary>
+          <summary>Can you match what our current lab does?</summary>
           <div class="faq__body">
-            <p>Not currently. We ship to all 50 states and the District of Columbia. International distribution is something we're working on — email us and we'll let you know when it opens.</p>
+            <p>Usually, and it's a good conversation to have up front. Send us a recent case and tell us what you like about how it came back — contact tightness, occlusal scheme, how the ceramics are characterized. We'll put it on your account as a standing preference.</p>
+          </div>
+        </details>
+        <details>
+          <summary>Do you work outside the United States?</summary>
+          <div class="faq__body">
+            <p>Not currently. We take cases from licensed practices in all 50 states and the District of Columbia.</p>
           </div>
         </details>
       </div>
@@ -323,27 +346,28 @@
           </svg>
           <span>Impressive<em style="color:#9fe7dc">Bite</em></span>
         </a>
-        <p>VPS impression material for American dental practices. Shipped direct from our U.S. distribution center to all 50 states.</p>
+        <p>A digital dental lab serving practices across the United States. Fixed, removable and appliance work, designed and finished by licensed technicians.</p>
       </div>
 
       <div>
-        <h4>Products</h4>
+        <h4>Restorations</h4>
         <ul>
-          <li><a href="products.html#putty">Putty</a></li>
-          <li><a href="products.html#heavy">Heavy Body</a></li>
-          <li><a href="products.html#monophase">Monophase</a></li>
-          <li><a href="products.html#light">Light Body</a></li>
-          <li><a href="products.html#bite">Bite Registration</a></li>
+          <li><a href="products.html#crown-bridge">Crown &amp; bridge</a></li>
+          <li><a href="products.html#implant">Implant restorations</a></li>
+          <li><a href="products.html#removable">Dentures &amp; partials</a></li>
+          <li><a href="products.html#appliance">Night guards</a></li>
+          <li><a href="products.html#retainers">Clear retainers</a></li>
         </ul>
       </div>
 
       <div>
-        <h4>Resources</h4>
+        <h4>For your practice</h4>
         <ul>
-          <li><a href="technical.html">Technical data</a></li>
-          <li><a href="technical.html#technique">Technique guide</a></li>
-          <li><a href="technical.html#storage">Storage &amp; handling</a></li>
-          <li><a href="technical.html#faq">Troubleshooting</a></li>
+          <li><a href="how-it-works.html">How it works</a></li>
+          <li><a href="how-it-works.html#scanners">Scanner compatibility</a></li>
+          <li><a href="how-it-works.html#submitting">Submitting a case</a></li>
+          <li><a href="how-it-works.html#turnaround">Turnaround</a></li>
+          <li><a href="how-it-works.html#scan-tips">Getting a clean scan</a></li>
         </ul>
       </div>
 
@@ -352,8 +376,8 @@
         <ul>
           <li><a href="about.html">About us</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html#samples">Free samples</a></li>
-          <li><a href="contact.html#dso">DSO &amp; group pricing</a></li>
+          <li><a href="contact.html#start">Send your first case</a></li>
+          <li><a href="contact.html#dso">DSO &amp; group accounts</a></li>
         </ul>
       </div>
     </div>
@@ -362,7 +386,7 @@
       <span>&copy; <span data-year>2026</span> ImpressiveBite. All rights reserved.</span>
       <nav aria-label="Legal">
         <a href="contact.html">Support</a>
-        <a href="technical.html#regulatory">Regulatory</a>
+        <a href="how-it-works.html#standards">Standards &amp; materials</a>
       </nav>
     </div>
   </div>

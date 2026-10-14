@@ -1,7 +1,8 @@
 # impressivebite.com
 
-Marketing and sample-request website for **ImpressiveBite** — VPS (vinyl polysiloxane)
-dental impression material sold direct to dental practices across the United States.
+Marketing and new-account website for **ImpressiveBite** — a digital dental lab serving
+practices across the United States. Crown and bridge, implant restorations, removables,
+night guards and retainers.
 
 Static HTML, CSS and vanilla JavaScript. No build step, no framework, no dependencies —
 the files in this repo are the site that gets deployed.
@@ -10,11 +11,11 @@ the files in this repo are the site that gets deployed.
 
 | File | Purpose |
 | --- | --- |
-| `index.html` | Home — positioning, why-us, product overview, how buying works, FAQ |
-| `products.html` | Full catalog: six materials with specs, SKUs, pack sizes, accessories |
-| `technical.html` | ISO 4823 data table, technique guide, chairside sequence, storage, disinfection, troubleshooting, regulatory |
-| `about.html` | Company story, commitments, who we sell to |
-| `contact.html` | Sample-request / quote form, contact routes, ordering FAQ |
+| `index.html` | Home — positioning, why switch, how it works, case types, remake policy, FAQ |
+| `products.html` | Case list: crown & bridge, implants, removables, appliances, retainers, esthetics, models |
+| `how-it-works.html` | Scanner compatibility, case submission, design approval, turnaround, scan quality, shipping, remakes |
+| `about.html` | Company story, commitments, who we work with |
+| `contact.html` | New-account form, contact routes, getting-started FAQ |
 | `assets/css/site.css` | The whole design system in one stylesheet |
 | `assets/js/site.js` | Nav, scroll reveal, FAQ, form validation and submission |
 | `404.html` | Not-found page (root-absolute asset paths, `noindex`) |
@@ -54,9 +55,12 @@ Let's Encrypt certificate once DNS resolves — usually minutes, up to 24h. Set 
 primary domain in Netlify so the other host redirects to it rather than serving
 duplicate content.
 
+`netlify.toml` also holds a 301 from `/technical.html` (the old impression-material spec
+sheet) to `/how-it-works.html`.
+
 Other hosts work too (Vercel, Cloudflare Pages, GitHub Pages, S3+CloudFront) — point
-them at the repo root — but they ignore `netlify.toml`, so the headers and the form
-backend would need reconfiguring.
+them at the repo root — but they ignore `netlify.toml`, so the headers, the redirect and
+the form backend would need reconfiguring.
 
 ## The contact form
 
@@ -76,8 +80,9 @@ Submission mode is chosen automatically, in this order:
 3. Neither → opens the visitor's mail client with the request pre-filled, so the form
    is never a dead end, including on local `file://` previews
 
-Field names sent: `name`, `role`, `practice`, `email`, `phone`, `state`, `locations`,
-`reason`, `products` (repeated, one per checked box), `technique`, `message`. The
+The Netlify form is named `lab-inquiry`. Field names sent: `name`, `role`, `practice`,
+`email`, `phone`, `state`, `locations`, `reason`, `services` (repeated, one per checked
+box), `scanner`, `volume`, `message`. The
 `company_website` field is a honeypot — hidden from people, dropped client-side by
 `site.js` and server-side by Netlify via `netlify-honeypot`.
 
@@ -97,8 +102,8 @@ printf '%s' 'document.documentElement.classList.add("js");' \
 cannot be hashed. Adding any external script, font or analytics tag means widening the
 CSP to match.
 
-Product links can deep-link into the form: `contact.html?product=light-body`
-pre-checks that material's box. The values match the checkbox `value` attributes.
+Catalog links deep-link into the form: `contact.html?service=implant` pre-checks that case
+type. The values match the checkbox `value` attributes on the contact form.
 
 ## Before this goes live
 
@@ -111,9 +116,10 @@ so read that file before pointing the domain at this.
 
 - Design tokens (color, spacing, shadow, radius) live in `:root` at the top of
   `site.css`. Change the brand there and the whole site follows.
-- Header and footer are duplicated across the five pages. Editing one means editing
-  all five — if the page count grows much beyond this, move to a static site
-  generator instead.
+- Header and footer are duplicated across the five pages plus `404.html`. Editing one
+  means editing all six — if the page count grows much beyond this, move to a static site
+  generator instead. Note that `404.html` uses root-absolute paths (`/assets/...`) because
+  it can be served from any URL depth; the other pages use relative paths.
 - No external requests: no CDN, no web fonts, no analytics. Everything renders from
   files in this repo, which keeps the site fast and avoids a third-party privacy
   surface on a healthcare-adjacent site. Adding analytics later means adding a
