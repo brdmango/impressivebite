@@ -17,17 +17,20 @@ one of the 115 prices is wrong, and they're published.
 
 ## 2. The markup
 
-Every price is exactly **supplier cost × 1.60**. Verified item by item against the
-source list; 114 of 115 match exactly, and the gold / high-noble crown has no cost in
-the source so it shows as "Quoted".
+Every price is exactly **supplier cost × 2.10 (110% markup)**. Verified item by item
+against the source list; 114 of 115 match exactly, and the gold / high-noble crown has
+no cost in the source so it shows as "Quoted".
 
 Worth sanity-checking the result as a *business* decision rather than arithmetic:
 
-- A full contour zirconia crown lands at **$24**, a PFM at **$24**, an e.max press crown
-  at **$44.80**. US labs commonly charge several times that, so these may be far below
-  what the market will bear.
-- A flat 60% on everything means the cheap items carry very little absolute margin —
-  a $3.20 printed model earns $1.20 gross, which won't cover the handling.
+- A full contour zirconia crown lands at **$31.50**, a PFM at **$31.50**, an e.max press
+  crown at **$58.80**. US labs commonly charge well above this, so there may still be
+  room — 110% doubles your money but the absolute prices remain low for the US market.
+- A flat rate still leaves the cheap items thin: a **$4.20** printed model earns $2.20
+  gross, which barely covers handling and packaging.
+- The expensive end moves a long way: the All-on-X titanium hybrid is now **$1,785**.
+  That is a credible US price, but check it against what you can deliver it for
+  including remakes.
 - Consider a floor price, or different markups by category, rather than one flat rate.
 
 To reprice: edit `tools/price-list.json`, run `python3 tools/build-price-list.py`,
@@ -69,8 +72,8 @@ decide it deliberately:
 - add a line item (e.g. "Impression scanning / model digitisation") to
   `tools/price-list.json` and remove the "same prices" sentence from `products.html`
 
-Either way, note that the source price list already carries **3D Printed Working Model**
-at $3.20 and **3D Printed Study Model** at $6.40 — if an impression case needs a printed
+Either way, note that the price list already carries **3D Printed Working Model** at
+$4.20 and **3D Printed Study Model** at $8.40 — if an impression case needs a printed
 model, that cost is real and currently unbilled.
 
 ## 6. Capability
