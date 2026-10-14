@@ -8,14 +8,25 @@
   command = ""
 
 # --- Redirects --------------------------------------------------------------
-# technical.html was the impression-material spec sheet. The lab site replaced
-# it with how-it-works.html, so anything still pointing at the old URL — a
-# bookmark, an indexed result — lands on the page that replaced it rather than
-# on a 404.
+# Pages removed when the site was cut back to Home / Price list / Contact.
+# Anything still pointing at an old URL — a bookmark, an indexed result — lands
+# on the home page rather than a 404.
 
 [[redirects]]
   from = "/technical.html"
-  to = "/how-it-works.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/how-it-works.html"
+  to = "/"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/about.html"
+  to = "/"
   status = 301
   force = true
 

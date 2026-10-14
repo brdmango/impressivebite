@@ -3,12 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Send Your First Case | ImpressiveBite Dental Lab</title>
-<meta name="description" content="Get pricing, ask about your scanner, or send your first case to ImpressiveBite. No minimum, no contract, and a reply within one business day.">
+<title>Open an Account | ImpressiveBite Dental Lab</title>
+<meta name="description" content="Open an account with ImpressiveBite and send your first case. No minimum, no contract, reply within one business day.">
 <link rel="canonical" href="https://impressivebite.com/contact.html">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Send Your First Case | ImpressiveBite Dental Lab">
-<meta property="og:description" content="Pricing, scanner questions, DSO accounts, or your first case. No minimum, no contract.">
+<meta property="og:title" content="Open an Account | ImpressiveBite Dental Lab">
+<meta property="og:description" content="Open an account and send your first case. No minimum, no contract.">
 <meta name="theme-color" content="#06443e">
 <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
 <script>document.documentElement.classList.add("js");</script>
@@ -36,48 +36,42 @@
 
     <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="index.html">Home</a>
-      <a href="products.html">Restorations</a>
-      <a href="how-it-works.html">How it works</a>
-      <a href="about.html">About</a>
+      <a href="products.html">Price list</a>
       <a href="contact.html" aria-current="page">Contact</a>
-      <a class="btn btn--primary" href="#request-form">Send your first case</a>
+      <a class="btn btn--primary" href="#request-form">Open an account</a>
     </nav>
 
-    <a class="btn btn--primary header-cta" href="#request-form">Send your first case</a>
+    <a class="btn btn--primary header-cta" href="#request-form">Open an account</a>
   </div>
 </header>
 
 <main id="main">
 
-  <section class="hero" style="padding-bottom:clamp(36px,4vw,52px)" id="start">
+  <section class="hero" style="padding:clamp(40px,5vw,64px) 0" id="start">
     <div class="wrap">
-      <div style="max-width:740px">
+      <div style="max-width:680px">
         <span class="eyebrow">Get started</span>
-        <h1>Tell us what you send out. We'll do the rest.</h1>
+        <h1>Open an account</h1>
         <p class="hero__lede">
-          Pricing for your actual case mix, a straight answer about your scanner, or a first case
-          sent this week. No minimum, no contract, and nobody will show up at your office
-          unannounced.
+          No minimum, no contract. We reply within one business day.
         </p>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding-top:clamp(36px,4vw,56px)">
+  <section class="section" style="padding-top:clamp(28px,3vw,40px)">
     <div class="wrap contact-grid">
 
-      <!-- ================= Form ================= -->
       <div class="form-card">
-        <h2 style="font-size:1.5rem">Start with your practice</h2>
+        <h2 style="font-size:1.4rem">Your practice</h2>
         <p style="color:var(--slate-500);font-size:.96rem">
-          Fields marked <span class="req">*</span> are required. We reply within one business day.
+          Fields marked <span class="req">*</span> are required.
         </p>
 
         <!-- Netlify Forms: the deploy bot parses these attributes out of the
              static HTML to register the form. `netlify-honeypot` makes Netlify
              discard submissions that fill company_website server-side; site.js
-             drops them client-side too. Submissions appear under Forms in the
-             Netlify dashboard. -->
+             drops them client-side too. -->
         <form id="request-form" name="lab-inquiry" method="POST"
               data-netlify="true" netlify-honeypot="company_website" novalidate>
           <input type="hidden" name="form-name" value="lab-inquiry">
@@ -95,24 +89,10 @@
               <span class="error-msg" id="name-error"></span>
             </div>
             <div class="field">
-              <label for="role">Role</label>
-              <select id="role" name="role">
-                <option value="">Select one</option>
-                <option>Dentist / owner</option>
-                <option>Associate dentist</option>
-                <option>Office manager</option>
-                <option>Lab coordinator</option>
-                <option>Dental assistant</option>
-                <option>Purchasing / procurement</option>
-                <option>Other</option>
-              </select>
+              <label for="practice">Practice <span class="req">*</span></label>
+              <input type="text" id="practice" name="practice" autocomplete="organization" required>
+              <span class="error-msg" id="practice-error"></span>
             </div>
-          </div>
-
-          <div class="field">
-            <label for="practice">Practice or organization <span class="req">*</span></label>
-            <input type="text" id="practice" name="practice" autocomplete="organization" required>
-            <span class="error-msg" id="practice-error"></span>
           </div>
 
           <div class="field-row">
@@ -154,48 +134,7 @@
               <span class="error-msg" id="state-error"></span>
             </div>
             <div class="field">
-              <label for="locations">Number of locations</label>
-              <select id="locations" name="locations">
-                <option>1</option>
-                <option>2–5</option>
-                <option>6–20</option>
-                <option>21+ (DSO)</option>
-                <option>School / residency program</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="field">
-            <label for="reason">What can we help with? <span class="req">*</span></label>
-            <select id="reason" name="reason" required>
-              <option value="">Select one</option>
-              <option>Pricing for our case mix</option>
-              <option>Send our first case</option>
-              <option>Question about our scanner</option>
-              <option>We still use impressions — how do we start?</option>
-              <option>DSO or group account</option>
-              <option>Question about a specific case</option>
-              <option>Problem with a case in progress</option>
-              <option>Something else</option>
-            </select>
-            <span class="error-msg" id="reason-error"></span>
-          </div>
-
-          <div class="field">
-            <label>What do you send out? <span class="hint">Check any that apply — this is what we'll price.</span></label>
-            <div class="choices">
-              <label class="choice"><input type="checkbox" name="services" value="crown-bridge"> Crown &amp; bridge</label>
-              <label class="choice"><input type="checkbox" name="services" value="implant"> Implant restorations</label>
-              <label class="choice"><input type="checkbox" name="services" value="removable"> Dentures &amp; partials</label>
-              <label class="choice"><input type="checkbox" name="services" value="appliance"> Night guards &amp; splints</label>
-              <label class="choice"><input type="checkbox" name="services" value="retainers"> Clear retainers</label>
-              <label class="choice"><input type="checkbox" name="services" value="esthetics"> Veneers &amp; esthetics</label>
-            </div>
-          </div>
-
-          <div class="field-row">
-            <div class="field">
-              <label for="scanner">Intraoral scanner</label>
+              <label for="scanner">Scanner</label>
               <select id="scanner" name="scanner">
                 <option value="">Select one</option>
                 <option>3Shape TRIOS</option>
@@ -207,25 +146,25 @@
                 <option>Shining 3D / Aoralscan</option>
                 <option>Other scanner</option>
                 <option>No scanner — we take impressions</option>
-                <option>Shopping for one now</option>
-              </select>
-            </div>
-            <div class="field">
-              <label for="volume">Units per month</label>
-              <select id="volume" name="volume">
-                <option value="">Select one</option>
-                <option>Under 20</option>
-                <option>20–50</option>
-                <option>50–150</option>
-                <option>150–400</option>
-                <option>400+</option>
               </select>
             </div>
           </div>
 
           <div class="field">
-            <label for="message">Anything else we should know?</label>
-            <textarea id="message" name="message" placeholder="A case you'd like to send first, what's gone wrong with your current lab, or a question about a specific restoration."></textarea>
+            <label>What do you send out? <span class="hint">Check any that apply.</span></label>
+            <div class="choices">
+              <label class="choice"><input type="checkbox" name="services" value="crown-bridge"> Crown &amp; bridge</label>
+              <label class="choice"><input type="checkbox" name="services" value="edentulous"> Edentulous / All-on-X</label>
+              <label class="choice"><input type="checkbox" name="services" value="implant"> Implant</label>
+              <label class="choice"><input type="checkbox" name="services" value="removable"> Removable</label>
+              <label class="choice"><input type="checkbox" name="services" value="retainer"> Retainers</label>
+              <label class="choice"><input type="checkbox" name="services" value="surgical-guide"> Surgical guides</label>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="message">Anything else?</label>
+            <textarea id="message" name="message" placeholder="A case you'd like to send first, or a question about a price."></textarea>
           </div>
 
           <button class="btn btn--primary btn--lg btn--wide" type="submit">Send</button>
@@ -233,103 +172,35 @@
           <div class="form-status" id="form-status" role="status" aria-live="polite"></div>
 
           <p class="form-legal">
-            We use your details to answer this request and set up your account. We don't sell your
-            information and we don't add you to a mailing list unless you ask. Please don't include
-            patient-identifying information in this form — once you have an account, cases go
-            through the secure portal.
+            We use your details to set up your account and answer this message. Please don't
+            include patient-identifying information here.
           </p>
         </form>
       </div>
 
-      <!-- ================= Side panel ================= -->
       <aside>
         <div class="info-block">
-          <h3>New accounts &amp; pricing</h3>
+          <h3>Email</h3>
           <p><a href="mailto:hello@impressivebite.com">hello@impressivebite.com</a></p>
-          <p><small>Pricing, scanner questions, and getting set up.</small></p>
+          <p><small>New accounts and pricing.</small></p>
         </div>
 
         <div class="info-block">
           <h3>Cases in progress</h3>
           <p><a href="mailto:cases@impressivebite.com">cases@impressivebite.com</a></p>
-          <p><small>A case you've already sent, a remake, or a question for your technician. Include the case number.</small></p>
-        </div>
-
-        <div class="info-block" id="dso">
-          <h3>DSO &amp; group accounts</h3>
-          <p><a href="mailto:groups@impressivebite.com">groups@impressivebite.com</a></p>
-          <p><small>Volume pricing, consolidated invoicing, per-location shipping.</small></p>
+          <p><small>Include the case number.</small></p>
         </div>
 
         <div class="card" style="padding:24px">
           <h3 style="font-size:1rem">What happens next</h3>
           <ul class="checks" style="margin-bottom:0;font-size:.92rem">
             <li>We reply within one business day</li>
-            <li>You get pricing for the work you actually send out</li>
             <li>We confirm your scanner exports what we need</li>
-            <li>Your account and portal login are set up the same day you say go</li>
-            <li>No sales calls unless you ask for one</li>
+            <li>Your account is set up the same day you say go</li>
           </ul>
-        </div>
-
-        <div class="callout callout--info" style="margin-top:22px">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.6v.6"/></svg>
-          <p style="margin-bottom:0;font-size:.9rem">
-            <strong>Already have a case ready?</strong> Say so in the message. We can set up the
-            account and take the first case the same day.
-          </p>
         </div>
       </aside>
 
-    </div>
-  </section>
-
-  <!-- ================= FAQ ================= -->
-  <section class="section section--sand">
-    <div class="wrap wrap--narrow">
-      <div class="section-head section-head--center">
-        <span class="eyebrow">Before you ask</span>
-        <h2>Common questions about getting started</h2>
-      </div>
-
-      <div class="faq">
-        <details open>
-          <summary>How quickly can we send a case?</summary>
-          <div class="faq__body">
-            <p>Same day, usually. Setting up an account takes a short conversation to confirm your scanner, your preferences and billing — after that the portal is live and you can upload immediately.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Do we have to leave our current lab?</summary>
-          <div class="faq__body">
-            <p>No, and most practices don't at first. Run both. Send us a few units, keep the rest where they are, and compare on your own cases. There's no minimum, so there's no cost to taking your time.</p>
-          </div>
-        </details>
-        <details>
-          <summary>What if we don't have a scanner?</summary>
-          <div class="faq__body">
-            <p>Send impressions. We'll mail prepaid labels, digitize them when they arrive, and run the case through the same workflow. It adds about a day. If you're considering a scanner, tell us which ones — we'll give you an honest read on how each one's files behave in a lab.</p>
-          </div>
-        </details>
-        <details>
-          <summary>How does billing work?</summary>
-          <div class="faq__body">
-            <p>Monthly invoicing on net terms for established practices, or card at the case level if you'd rather. Either way the quote is the invoice — no line items appear that weren't agreed in advance.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Can you match what our current lab does?</summary>
-          <div class="faq__body">
-            <p>Usually, and it's a good conversation to have up front. Send us a recent case and tell us what you like about how it came back — contact tightness, occlusal scheme, how the ceramics are characterized. We'll put it on your account as a standing preference.</p>
-          </div>
-        </details>
-        <details>
-          <summary>Do you work outside the United States?</summary>
-          <div class="faq__body">
-            <p>Not currently. We take cases from licensed practices in all 50 states and the District of Columbia.</p>
-          </div>
-        </details>
-      </div>
     </div>
   </section>
 
@@ -337,7 +208,7 @@
 
 <footer class="site-footer">
   <div class="wrap">
-    <div class="footer-grid">
+    <div class="footer-grid footer-grid--lean">
       <div>
         <a class="brand" href="index.html">
           <svg viewBox="0 0 40 40" aria-hidden="true" focusable="false">
@@ -346,48 +217,29 @@
           </svg>
           <span>Impressive<em style="color:#9fe7dc">Bite</em></span>
         </a>
-        <p>A digital dental lab serving practices across the United States. Fixed, removable and appliance work, designed and finished by licensed technicians.</p>
+        <p>A digital dental lab for practices across the United States.</p>
       </div>
 
       <div>
-        <h4>Restorations</h4>
+        <h4>Site</h4>
         <ul>
-          <li><a href="products.html#crown-bridge">Crown &amp; bridge</a></li>
-          <li><a href="products.html#implant">Implant restorations</a></li>
-          <li><a href="products.html#removable">Dentures &amp; partials</a></li>
-          <li><a href="products.html#appliance">Night guards</a></li>
-          <li><a href="products.html#retainers">Clear retainers</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>For your practice</h4>
-        <ul>
-          <li><a href="how-it-works.html">How it works</a></li>
-          <li><a href="how-it-works.html#scanners">Scanner compatibility</a></li>
-          <li><a href="how-it-works.html#submitting">Submitting a case</a></li>
-          <li><a href="how-it-works.html#turnaround">Turnaround</a></li>
-          <li><a href="how-it-works.html#scan-tips">Getting a clean scan</a></li>
-        </ul>
-      </div>
-
-      <div>
-        <h4>Company</h4>
-        <ul>
-          <li><a href="about.html">About us</a></li>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="products.html">Price list</a></li>
           <li><a href="contact.html">Contact</a></li>
-          <li><a href="contact.html#start">Send your first case</a></li>
-          <li><a href="contact.html#dso">DSO &amp; group accounts</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:hello@impressivebite.com">hello@impressivebite.com</a></li>
+          <li><a href="contact.html">Open an account</a></li>
         </ul>
       </div>
     </div>
 
     <div class="footer-bottom">
       <span>&copy; <span data-year>2026</span> ImpressiveBite. All rights reserved.</span>
-      <nav aria-label="Legal">
-        <a href="contact.html">Support</a>
-        <a href="how-it-works.html#standards">Standards &amp; materials</a>
-      </nav>
     </div>
   </div>
 </footer>

@@ -100,6 +100,52 @@
     if (box) box.checked = true;
   }
 
+  /* --- Price list filter -------------------------------------------------
+     The filter box ships hidden and is revealed here, so it never appears
+     without the JavaScript that makes it work. Rows and whole category groups
+     hide as you type; an empty result gets its own message. */
+
+  var search = document.getElementById("price-search");
+  if (search) {
+    document.querySelectorAll("[data-needs-js]").forEach(function (el) {
+      el.hidden = false;
+    });
+
+    var rows = [].slice.call(document.querySelectorAll("[data-row]"));
+    var groups = [].slice.call(document.querySelectorAll("[data-group]"));
+    var count = document.getElementById("price-count");
+    var empty = document.getElementById("price-empty");
+    var catNav = document.querySelector(".cat-nav");
+    var total = rows.length;
+
+    var filter = function () {
+      var q = search.value.trim().toLowerCase();
+      var shown = 0;
+
+      rows.forEach(function (row) {
+        var hit = !q || row.dataset.search.indexOf(q) !== -1;
+        row.hidden = !hit;
+        if (hit) shown++;
+      });
+
+      // A category with nothing left in it shouldn't keep its heading.
+      groups.forEach(function (group) {
+        group.hidden = !group.querySelector("[data-row]:not([hidden])");
+      });
+
+      if (empty) empty.hidden = shown !== 0;
+      if (catNav) catNav.hidden = !!q;
+      if (count) {
+        count.textContent = q
+          ? shown + " of " + total + " items"
+          : "";
+      }
+    };
+
+    search.addEventListener("input", filter);
+    search.addEventListener("search", filter);   // fires on the clear button
+  }
+
   /* --- Request form ------------------------------------------------------ */
 
   var form = document.getElementById("request-form");
