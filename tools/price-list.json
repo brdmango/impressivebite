@@ -1,0 +1,629 @@
+{
+  "_comment": "Selling prices only. Supplier cost is deliberately NOT stored here or anywhere in this repo, so the margin cannot be read off the site or recovered from git history. To reprice, edit `price` values directly, or recompute from your own cost sheet kept outside this repo.",
+  "currency": "USD",
+  "categories": [
+    {
+      "id": "crown-bridge",
+      "name": "Crown & Bridge",
+      "items": [
+        {
+          "name": "Full Cast Crown (Non-Precious)",
+          "note": "Co-Cr alloy",
+          "price": 31.5
+        },
+        {
+          "name": "Full Metal Inlay / Onlay",
+          "note": "Full metal",
+          "price": 31.5
+        },
+        {
+          "name": "PFM Crown (Non-Precious)",
+          "note": "Porcelain fused to metal",
+          "price": 31.5
+        },
+        {
+          "name": "High Translucency (HT) Zirconia Crown",
+          "note": "Multi-layered",
+          "price": 35.7
+        },
+        {
+          "name": "Full Contour Zirconia Crown",
+          "note": "High strength",
+          "price": 31.5
+        },
+        {
+          "name": "PFZ Crown (Porcelain Fused to Zirconia)",
+          "note": "Layered zirconia",
+          "price": 42
+        },
+        {
+          "name": "IPS e.max Press Crown",
+          "note": "Pressed ceramic",
+          "price": 58.8
+        },
+        {
+          "name": "IPS e.max Press Onlay",
+          "note": "Pressed ceramic",
+          "price": 58.8
+        },
+        {
+          "name": "IPS e.max Press Veneer",
+          "note": "Pressed ceramic",
+          "price": 58.8
+        },
+        {
+          "name": "IPS e.max CAD Crown",
+          "note": "Milled",
+          "price": 52.5
+        },
+        {
+          "name": "IPS e.max CAD Onlay",
+          "note": "Milled",
+          "price": 52.5
+        },
+        {
+          "name": "IPS e.max CAD Veneer",
+          "note": "Milled",
+          "price": 52.5
+        },
+        {
+          "name": "Ultra-Thin Zirconia Veneer (EZneer)",
+          "note": "High esthetic",
+          "price": 42
+        },
+        {
+          "name": "Full Cast Crown (Gold / High Noble)",
+          "note": "Priced at current metal market",
+          "price": null
+        },
+        {
+          "name": "Cast Metal Post & Core",
+          "note": "FMC post & core",
+          "price": 18.9
+        },
+        {
+          "name": "PFM Maryland Bridge (Pontic)",
+          "note": "PFM Maryland pontic",
+          "price": 31.5
+        },
+        {
+          "name": "One-Piece Cast Post & Core",
+          "note": "FMC post & core",
+          "price": 37.8
+        },
+        {
+          "name": "Zirconia Post & Core",
+          "note": "Zirconia post & core",
+          "price": 37.8
+        },
+        {
+          "name": "One-Piece Zirconia Post & Crown",
+          "note": "Zirconia post & crown",
+          "price": 42
+        },
+        {
+          "name": "Zirconia Maryland Bridge (Pontic)",
+          "note": "Zirconia Maryland pontic",
+          "price": 33.6
+        },
+        {
+          "name": "Zirconia Maryland Wing (Unilateral)",
+          "note": "Zirconia Maryland wing",
+          "price": 16.8
+        },
+        {
+          "name": "Zirconia Inlay / Onlay",
+          "note": "Zirconia",
+          "price": 37.8
+        },
+        {
+          "name": "Telescopic Crown (Primary & Secondary)",
+          "note": "Double crown system",
+          "price": 138.6
+        },
+        {
+          "name": "3D Printed Study Model",
+          "note": "Printed",
+          "price": 8.4
+        },
+        {
+          "name": "Composite Crown / Inlay / Onlay",
+          "note": "Composite",
+          "price": 54.6
+        },
+        {
+          "name": "Full Titanium Crown",
+          "note": "Titanium",
+          "price": 84
+        },
+        {
+          "name": "Full Titanium Inlay / Onlay",
+          "note": "Titanium",
+          "price": 73.5
+        },
+        {
+          "name": "Titanium Post & Core",
+          "note": "Titanium",
+          "price": 63
+        },
+        {
+          "name": "PMMA Temporary Crown / Bridge",
+          "note": "Temporary",
+          "price": 12.6
+        }
+      ]
+    },
+    {
+      "id": "edentulous",
+      "name": "Edentulous Restoration",
+      "items": [
+        {
+          "name": "All-on-X Hybrid Bridge (Titanium Bar + Zirconia)",
+          "note": "Ti bar + zirconia crowns + gum",
+          "price": 1785
+        },
+        {
+          "name": "All-on-X Zirconia Bridge (Zirconia Frame)",
+          "note": "Zirconia bar + zirconia / gum",
+          "price": 1680
+        },
+        {
+          "name": "All-on-X Hybrid Bridge (Co-Cr Bar + Zirconia)",
+          "note": "Co-Cr bar + zirconia crowns",
+          "price": 1680
+        },
+        {
+          "name": "Titanium Implant Bar (Milled)",
+          "note": "Bar only",
+          "price": 735
+        },
+        {
+          "name": "Titanium Base (Ti-Base)",
+          "note": "Screw included",
+          "price": 31.5
+        },
+        {
+          "name": "All-on-X PMMA Try-In",
+          "note": "Per unit / design",
+          "price": 6.3
+        },
+        {
+          "name": "Screw-Retained Zirconia Crown (with Ti-Base)",
+          "note": "Custom abutment / Ti-base + crown",
+          "price": 210
+        },
+        {
+          "name": "Screw-Retained PFM Crown",
+          "note": "Ti-base / custom abutment",
+          "price": 168
+        },
+        {
+          "name": "Screw-Retained e.max Crown",
+          "note": "Ti-base / custom abutment",
+          "price": 220.5
+        },
+        {
+          "name": "Screw-Retained PFZ Crown",
+          "note": "Ti-base / custom abutment",
+          "price": 210
+        },
+        {
+          "name": "Hybrid Zirconia Abutment",
+          "note": "Zirconia + Ti-base",
+          "price": 105
+        },
+        {
+          "name": "Verification Jig / Sectional Jig",
+          "note": "Jig",
+          "price": 6.3
+        },
+        {
+          "name": "Digital Complete Denture",
+          "note": "Full arch",
+          "price": 136.5
+        },
+        {
+          "name": "Digital Denture Try-In (Printed)",
+          "note": "Single arch try-in",
+          "price": 115.5
+        }
+      ]
+    },
+    {
+      "id": "implant",
+      "name": "Implant",
+      "items": [
+        {
+          "name": "Custom Titanium Abutment",
+          "note": "Screw included",
+          "price": 63
+        },
+        {
+          "name": "Implant Full Contour Zirconia Crown",
+          "note": "Screw or cement retained",
+          "price": 31.5
+        },
+        {
+          "name": "Implant PFZ / Layered Zirconia Crown",
+          "note": "Screw or cement retained",
+          "price": 35.7
+        },
+        {
+          "name": "Implant Analog",
+          "note": "Analog",
+          "price": 10.5
+        },
+        {
+          "name": "Intraoral Scan Body (Internal Connection)",
+          "note": "Internal connection",
+          "price": 21
+        },
+        {
+          "name": "Intraoral Scan Body (External Connection)",
+          "note": "External connection",
+          "price": 21
+        },
+        {
+          "name": "Pre-Milled Abutment Milling Fee",
+          "note": "Abutment milling",
+          "price": 31.5
+        },
+        {
+          "name": "PMMA Temporary Implant Crown",
+          "note": "Temporary implant crown",
+          "price": 31.5
+        }
+      ]
+    },
+    {
+      "id": "removable",
+      "name": "Removable",
+      "items": [
+        {
+          "name": "Soft Night Guard",
+          "note": "Soft",
+          "price": 42
+        },
+        {
+          "name": "Dual-Laminate Night Guard (Hard / Soft)",
+          "note": "Hard with soft liner",
+          "price": 63
+        },
+        {
+          "name": "3D Printed Night Guard (Hard)",
+          "note": "Printed, hard",
+          "price": 58.8
+        },
+        {
+          "name": "Custom Impression Tray",
+          "note": "Custom tray",
+          "price": 21
+        },
+        {
+          "name": "Base Plate + Wax Rim",
+          "note": "Base plate + bite rim",
+          "price": 6.3
+        },
+        {
+          "name": "Cast Metal Framework (Co-Cr)",
+          "note": "Framework only",
+          "price": 94.5
+        },
+        {
+          "name": "Vitallium 2000 Framework",
+          "note": "Premium alloy",
+          "price": 94.5
+        },
+        {
+          "name": "Titanium Framework",
+          "note": "Framework only",
+          "price": 94.5
+        },
+        {
+          "name": "PEEK Framework",
+          "note": "PEEK",
+          "price": 126
+        },
+        {
+          "name": "Metal Partial (Setup Only)",
+          "note": "Setup only",
+          "price": 63
+        },
+        {
+          "name": "Metal Partial (Finish Only)",
+          "note": "Finish only",
+          "price": 42
+        },
+        {
+          "name": "Acrylic Partial Denture (1–4 Teeth)",
+          "note": "Acrylic partial",
+          "price": 52.5
+        },
+        {
+          "name": "Acrylic Partial Denture (5–9 Teeth)",
+          "note": "Acrylic partial",
+          "price": 46.2
+        },
+        {
+          "name": "Acrylic Partial Denture (10–14 Teeth)",
+          "note": "Acrylic partial",
+          "price": 52.5
+        },
+        {
+          "name": "Acrylic Complete Denture (Single Arch)",
+          "note": "Acrylic full denture",
+          "price": 52.5
+        },
+        {
+          "name": "Acrylic Partial Setup Only (1–4 Teeth)",
+          "note": "Setup only",
+          "price": 31.5
+        },
+        {
+          "name": "Acrylic Partial Setup Only (5–9 Teeth)",
+          "note": "Setup only",
+          "price": 37.8
+        },
+        {
+          "name": "Acrylic Partial / Full Setup Only (10+ Teeth)",
+          "note": "Setup only",
+          "price": 42
+        },
+        {
+          "name": "Acrylic Finish Only",
+          "note": "Finish only",
+          "price": 33.6
+        },
+        {
+          "name": "Flexible Partial Denture (1–4 Teeth)",
+          "note": "Valplast style",
+          "price": 48.3
+        },
+        {
+          "name": "Flexible Partial Denture (5–9 Teeth)",
+          "note": "Valplast style",
+          "price": 54.6
+        },
+        {
+          "name": "Flexible Partial Denture (Single Arch)",
+          "note": "Valplast style",
+          "price": 58.8
+        },
+        {
+          "name": "Flexible Partial Setup (1–4 Teeth)",
+          "note": "Setup only",
+          "price": 27.3
+        },
+        {
+          "name": "Flexible Partial Setup (5–9 Teeth)",
+          "note": "Setup only",
+          "price": 33.6
+        },
+        {
+          "name": "Flexible Partial Setup (Single Arch)",
+          "note": "Setup only",
+          "price": 46.2
+        },
+        {
+          "name": "Flexible Partial Finish Only",
+          "note": "Finish only",
+          "price": 42
+        },
+        {
+          "name": "Cast Metal Clasp",
+          "note": "Cast clasp",
+          "price": 21
+        },
+        {
+          "name": "Flexible Clasp",
+          "note": "Flexible clasp",
+          "price": 21
+        },
+        {
+          "name": "Clear / Invisible Clasp",
+          "note": "Invisible clasp",
+          "price": 21
+        },
+        {
+          "name": "Wrought Wire Clasp",
+          "note": "Wire clasp",
+          "price": 14.7
+        },
+        {
+          "name": "Tooth Coloured Clasp",
+          "note": "Tooth colour clasp",
+          "price": 21
+        },
+        {
+          "name": "Clasp Repair / Add-On",
+          "note": "Repair",
+          "price": 10.5
+        },
+        {
+          "name": "Wax Rim",
+          "note": "Bite rim",
+          "price": 6.3
+        }
+      ]
+    },
+    {
+      "id": "retainer",
+      "name": "Retainer",
+      "items": [
+        {
+          "name": "Essix Retainer",
+          "note": "Clear aligner style",
+          "price": 31.5
+        },
+        {
+          "name": "Space Maintainer",
+          "note": "Space retainer",
+          "price": 25.2
+        },
+        {
+          "name": "Hawley Retainer",
+          "note": "Hawley",
+          "price": 37.8
+        },
+        {
+          "name": "Palatal Expander (Removable)",
+          "note": "Two-way expander with resin plate",
+          "price": 94.5
+        },
+        {
+          "name": "Bleaching Tray (Soft)",
+          "note": "Soft",
+          "price": 31.5
+        },
+        {
+          "name": "Anti-Snoring Device",
+          "note": "Shark style",
+          "price": 168
+        }
+      ]
+    },
+    {
+      "id": "surgical-guide",
+      "name": "Surgical Guide",
+      "items": [
+        {
+          "name": "Full Arch Surgical Guide (Edentulous)",
+          "note": "Semi-arch",
+          "price": 357
+        },
+        {
+          "name": "Full Arch Surgical Guide (Dual Arch)",
+          "note": "Dual arch",
+          "price": 630
+        },
+        {
+          "name": "Surgical Guide (Single Site)",
+          "note": "Single site",
+          "price": 105
+        },
+        {
+          "name": "Radiographic Guide",
+          "note": "Edentulous radiographic guide",
+          "price": 58.8
+        },
+        {
+          "name": "Surgical Guide Design (Single Arch)",
+          "note": "Design only",
+          "price": 126
+        },
+        {
+          "name": "Surgical Guide Design (Dual Arch)",
+          "note": "Design only",
+          "price": 241.5
+        },
+        {
+          "name": "Surgical Guide Design (Single Site)",
+          "note": "Design only",
+          "price": 42
+        }
+      ]
+    },
+    {
+      "id": "design",
+      "name": "Design Only",
+      "items": [
+        {
+          "name": "Crown Design Service",
+          "note": "Crown",
+          "price": 6.3
+        },
+        {
+          "name": "Bridge Design Service (5+ Units)",
+          "note": "Crown and bridge, 5+ units",
+          "price": 10.5
+        },
+        {
+          "name": "Implant Crown & Abutment Design",
+          "note": "Implant crown + abutment",
+          "price": 14.7
+        },
+        {
+          "name": "Digital Smile Design (Anterior 6–11)",
+          "note": "3D design",
+          "price": 50.4
+        },
+        {
+          "name": "DSD Photo Simulation",
+          "note": "2D photo",
+          "price": 42
+        }
+      ]
+    },
+    {
+      "id": "additions",
+      "name": "Additions & Fees",
+      "items": [
+        {
+          "name": "3D Printed Working Model",
+          "note": "Printed model",
+          "price": 4.2
+        },
+        {
+          "name": "Resin Coping",
+          "note": "Resin reduction coping",
+          "price": 0
+        },
+        {
+          "name": "Metal Coping",
+          "note": "Metal reduction coping",
+          "price": 6.3
+        },
+        {
+          "name": "Metal Maryland Wing",
+          "note": "Metal wing",
+          "price": 10.5
+        },
+        {
+          "name": "e.max Maryland Wing",
+          "note": "e.max wing",
+          "price": 52.5
+        },
+        {
+          "name": "Porcelain Labial Margin (180°)",
+          "note": "Porcelain butt margin",
+          "price": 6.3
+        },
+        {
+          "name": "Porcelain Labial Margin (360°)",
+          "note": "Porcelain butt margin",
+          "price": 6.3
+        },
+        {
+          "name": "Pink Porcelain (Gingiva Shade)",
+          "note": "Pink porcelain",
+          "price": 10.5
+        },
+        {
+          "name": "Gingiva Porcelain Application",
+          "note": "Implant pink porcelain",
+          "price": 21
+        },
+        {
+          "name": "Rest Seat Design",
+          "note": "Rest seats",
+          "price": 4.2
+        },
+        {
+          "name": "Putty Matrix / Index",
+          "note": "Putty",
+          "price": 10.5
+        },
+        {
+          "name": "Denture / Partial Repair",
+          "note": "Repair",
+          "price": 21
+        },
+        {
+          "name": "Cementation Fee",
+          "note": "Cementation",
+          "price": 0
+        }
+      ]
+    }
+  ]
+}
