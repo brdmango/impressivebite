@@ -58,23 +58,23 @@ Short list now, but they're still commitments:
 - Turnaround times are **no longer stated anywhere.** If you advertise them later, make
   sure they hold on your worst week, not your best.
 
-## 5. ⚠️ Nothing charges for digitising an impression
+## 5. Digital intake only — two leftovers in the price list
 
-The site now says, in several places, that you accept physical impressions and scan them
-in-house. **There is no line item for that work anywhere in the price list**, and the
-price-list page says "same prices whether you send an intraoral scan or a physical
-impression" — so as written, you absorb the model work and the scanning time for free.
+The site is now scan-only: it states plainly that you don't take impressions. Two items
+in the price list sit oddly against that, and both are yours to keep or cut:
 
-That may well be the right call as a way in for practices that haven't gone digital. But
-decide it deliberately:
+- **Custom Impression Tray** ($21) — a tray is for taking a physical impression. If you
+  never handle them, this has no buyer.
+- **Putty Matrix / Index** ($10.50) — a physical matrix, usually chairside.
 
-- keep it free and treat it as customer acquisition, or
-- add a line item (e.g. "Impression scanning / model digitisation") to
-  `tools/price-list.json` and remove the "same prices" sentence from `products.html`
+Neither is wrong to sell; a scan-only lab can still fabricate physical items a dentist
+uses in the operatory. But if they're there by inheritance rather than intent, remove
+them from `tools/price-list.json` and rerun the generator.
 
-Either way, note that the price list already carries **3D Printed Working Model** at
-$4.20 and **3D Printed Study Model** at $8.40 — if an impression case needs a printed
-model, that cost is real and currently unbilled.
+Also worth checking: the contact form now assumes every practice has a scanner, with
+"Shopping for one now" as the only alternative. A practice still on impressions has no
+way to say so — which is correct if you genuinely won't serve them, and a lost lead if
+you would.
 
 ## 6. Capability
 
