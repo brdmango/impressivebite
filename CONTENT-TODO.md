@@ -9,8 +9,8 @@ your own data rather than anything invented.
 ## 1. ⚠️ Confirm the currency
 
 Prices are published as **US dollars**. The source price list had no currency symbol —
-USD was inferred from the magnitudes (an All-on-X hybrid at $1,360 and a zirconia crown
-at $24 are both plausible US lab prices; the same numbers in RMB would not be).
+USD was inferred from the magnitudes (an All-on-X hybrid at $1,785 and a zirconia crown
+at $31.50 are both plausible US lab prices; the same numbers in RMB would not be).
 
 **Check this before you take an order.** If the source was in another currency, every
 one of the 115 prices is wrong, and they're published.
@@ -90,14 +90,35 @@ impression". There is **no upload portal**. Until there is one, either build/ado
 or change that line to say how cases really reach you — email, a shared drive, a lab
 platform.
 
-## 8. HIPAA
+## 8. ⚠️ Where the restorations are made
+
+The site now describes the business as **outsourcing**, which invites the obvious follow-up
+from any dentist: outsourced to where?
+
+This matters beyond marketing. Several US states require dental laboratories to disclose
+the point of origin of a restoration and the materials used in it, and some require lab
+registration. A dentist in one of those states cannot comply if they don't know where the
+work was made. Rules differ by state and change, so confirm your obligations with a
+regulatory advisor rather than from a list.
+
+Decide and then say it plainly on the site:
+
+- where cases are designed, and where they are milled, printed and finished
+- whether any step happens outside the United States
+- what documentation you can provide per case, since practices in disclosure states
+  will need it on file
+
+Saying nothing is the worst option. A dentist who discovers the answer later — rather
+than reading it up front — treats it as something that was hidden, whatever the truth is.
+
+## 9. HIPAA
 
 If you handle patient scans, you are likely a business associate of every practice you
 serve: Business Associate Agreements and real safeguards. The contact form asks people
 not to send patient-identifying information, which covers the form itself but not the
 case workflow. Get advice before the first real case.
 
-## 9. Still deliberately omitted
+## 10. Still deliberately omitted
 
 - **Testimonials and case photos** — fabricated reviews of a medical service are an FTC
   violation. Add real ones with permission.
